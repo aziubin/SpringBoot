@@ -17,6 +17,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * @author aziub
+ * https://start.spring.io/#!type=maven-project&
+ * language=java&
+ * platformVersion=3.0.6&
+ * packaging=jar&
+ * jvmVersion=17&
+ * groupId=com.aziubin.spring.boot&
+ * artifactId=javaPersystenceApi&
+ * name=javaPersystenceApi&
+ * description=Java%20Persistence%20API%20Spring%20Boot%20project&
+ * packageName=com.aziubin.spring.boot.javaPersystenceApi&
+ * dependencies=devtools,lombok,web,postgresql,data-jpa
+ *
+ */
 @SpringBootApplication
 public class JavaPersystenceApiApplication {
 
