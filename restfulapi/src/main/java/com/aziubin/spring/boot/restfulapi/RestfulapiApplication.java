@@ -18,6 +18,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * @author aziub
+ * https://start.spring.io/#!type=maven-project&
+ * language=java&
+ * platformVersion=3.0.6&
+ * packaging=jar&jvmVersion=17&
+ * groupId=com.aziubin.spring.boot&
+ * artifactId=restfulapi&
+ * name=restfulapi&
+ * description=Demo%20project%20for%20Spring%20Boot&
+ * packageName=com.aziubin.spring.boot.restfulapi&
+ * dependencies=devtools,lombok,web
+ *
+ */
 @SpringBootApplication
 @ConfigurationPropertiesScan
 public class RestfulapiApplication {
