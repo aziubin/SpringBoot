@@ -1,2 +1,3 @@
 # SpringBoot
-Spring boot repository
+Projects conuming Spring Boot features.
+
