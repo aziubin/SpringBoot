@@ -20,6 +20,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Transient;
 
@@ -47,6 +48,9 @@ public class JavaPersistenceApiTablesApplication {
 		//@JsonInclude(JsonInclude.Include.NON_NULL)
 		//@Transient
 		public Location location;
+		
+		@Lob
+		byte[] firmware;		
 	}
 
 	@Entity
