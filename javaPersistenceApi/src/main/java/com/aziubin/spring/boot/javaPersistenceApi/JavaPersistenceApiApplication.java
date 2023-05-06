@@ -30,13 +30,15 @@ import jakarta.persistence.Id;
  * description=Java%20Persistence%20API%20Spring%20Boot%20project&
  * packageName=com.aziubin.spring.boot.javaPersystenceApi&
  * dependencies=devtools,lombok,web,postgresql,data-jpa
+ * 
+ * -Dspring.devtools.restart.enabled=false
  *
  */
 @SpringBootApplication
-public class JavaPersystenceApiApplication {
+public class JavaPersistenceApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavaPersystenceApiApplication.class, args);
+		SpringApplication.run(JavaPersistenceApiApplication.class, args);
 	}
 
 //	@Entity
