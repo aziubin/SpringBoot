@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,9 +50,14 @@ public class MongodbApplication {
 	}
 
 	@RestController
-	class JvmSnapshotController {
+	static class JvmSnapshotController {
 		@Autowired
 		JvmSnapshotRepository jvmSnapshotRepository;
+		
+		@Autowired
+		void setMapKeyDotReplacement(MappingMongoConverter mappingMongoConverter) {
+		    mappingMongoConverter.setMapKeyDotReplacement("_");
+		}
 		
 		@GetMapping("/*")
 		List<RuntimeSnapshot> getJvmSnaphots() {
@@ -60,7 +66,7 @@ public class MongodbApplication {
 			RuntimeSnapshot runtimeSnapshot = RuntimeSnapshot.builder().id(UUID.randomUUID().toString()).pid(runtimeMXBean.getPid())
 					.inputArguments(runtimeMXBean.getInputArguments()).uptime(runtimeMXBean.getUptime())
 					.startTime(runtimeMXBean.getStartTime())
-//					.systemProperties(runtimeMXBean.getSystemProperties()) // org.springframework.data.mapping.MappingException: Map key java.specification.version contains dots but no replacement was configured; Make sure map keys don't contain dots in the first place or configure an appropriate replacement
+					.systemProperties(runtimeMXBean.getSystemProperties()) // org.springframework.data.mapping.MappingException: Map key java.specification.version contains dots but no replacement was configured; Make sure map keys don't contain dots in the first place or configure an appropriate replacement
 					.build();
 			jvmSnapshotRepository.save(runtimeSnapshot);
 			return jvmSnapshotRepository.findAll();
