@@ -95,6 +95,7 @@ public class JavaPersistenceApiApplication {
 			nodeRepository.save(cloudNode);
 			List<CloudNode> target = new ArrayList<>();
 			nodeRepository.findAll().forEach(target::add);
+			
 			return target;
 		}
 	}
