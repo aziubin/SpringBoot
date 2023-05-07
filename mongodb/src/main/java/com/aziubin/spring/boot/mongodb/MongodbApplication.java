@@ -69,7 +69,8 @@ public class MongodbApplication {
 		java.util.Map<String, String> systemProperties;
 
 		@CreatedDate
-	    private long createdDate;
+	    //private long createdDate;  // createdDate 0
+		private Long createdDate;  // not included 
 
 	    @LastModifiedDate
 	    private long modifiedDate;
@@ -116,6 +117,9 @@ public class MongodbApplication {
 		
 		@Autowired
 		JvmMachineRepository jvmMachineRepository;
+
+		@Autowired
+		TemplateMongodbRepository templateMongodbREpository;		
 		
 		@Autowired
 		void setMapKeyDotReplacement(MappingMongoConverter mappingMongoConverter) {
@@ -161,12 +165,12 @@ public class MongodbApplication {
 						.machine(machine)						
 						.build();
 		        long start = System.nanoTime();
-		        if (start > 0) {
-		        	throw new Exception("Rollbvack transaction"); // (-) created new _class "com.aziubin.spring.boot.mongodb.MongodbApplication$Machine"
-		        }
+//		        if (start > 0) {
+//		        	throw new Exception("Rollbvack transaction"); // (-) created new _class "com.aziubin.spring.boot.mongodb.MongodbApplication$Machine"
+//		        }
 				jvmSnapshotRepository.save(runtimeSnapshot);
 		        logger.info("save {} ", System.nanoTime() - start / 1000. / 1000. / 1000.);
-				return jvmSnapshotRepository.findAll();
+				return jvmSnapshotRepository.findAll(runtimeMXBean.getPid());
 			} catch (UnknownHostException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -177,6 +181,7 @@ public class MongodbApplication {
 		@GetMapping("/delete")
 		List<RuntimeSnapshot> deleteJvmSnaphots() {
 			jvmSnapshotRepository.deleteAll();
+			//jvmSnapshotRepository.deleteById(null);
 			return jvmSnapshotRepository.findAll();
 		}
 	}
