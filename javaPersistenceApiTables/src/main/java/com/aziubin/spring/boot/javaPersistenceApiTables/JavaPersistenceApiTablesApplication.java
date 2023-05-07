@@ -32,28 +32,6 @@ public class JavaPersistenceApiTablesApplication {
 	}
 	
 	@Entity
-	static class EdgeDevice {
-		@Id @GeneratedValue public long id;
-		public String address;
-
-//		@ManyToOne(optional = false)
-//		DeviceArchitecture deviceArchitecture;
-//		//@Formula("sub_total + (sub_total * tax)")
-//
-		// @ManyToOne(optional = false, fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-		// @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-		// Hibernate: select e1_0.id,e1_0.address,e1_0."location_id" from "java_persistence_api_tables_application$edge_device" e1_0
-		// com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->com.aziubin.spring.boot.javaPersistenceApiTables.JavaPersistenceApiTablesApplication$EdgeDevice["location"]->com.aziubin.spring.boot.javaPersistenceApiTables.JavaPersistenceApiTablesApplication$Location$HibernateProxy$XzZbHo0k["hibernateLazyInitializer"])
-		@ManyToOne(optional = false, fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-		//@JsonInclude(JsonInclude.Include.NON_NULL)
-		//@Transient
-		public Location location;
-		
-		@Lob
-		byte[] firmware;		
-	}
-
-	@Entity
 	static class DeviceArchitecture {
 		@Id
 		public long id;
