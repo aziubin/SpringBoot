@@ -3,6 +3,7 @@ package com.aziubin.spring.boot.javaPersistenceApiTables;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.Set;
 
 import org.hibernate.annotations.ManyToAny;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +55,10 @@ public class JavaPersistenceApiTablesApplication {
 		List<EdgeDevice> getEdgeDevice() {
 			ArrayList<EdgeDevice> edgeDevices = new ArrayList<>();
 			// select e1_0.id,e1_0.address,e1_0."location_id" from "java_persistence_api_tables_application$edge_device" e1_0
+			
+			//Hibernate: select e1_0.id,e1_0.address,e1_0.firmware,e1_0."location_id" from edge_device e1_0 where e1_0.id=?
+			//Hibernate: select l1_0.id,l1_0.name from "java_persistence_api_tables_application$location" l1_0 where l1_0.id=?			
+			Set<EdgeDevice> set = edgeRepository.getEdgeDeviceById(1);
 			
 			for (EdgeDevice edgeDevice : edgeRepository.findAll()) {
 				edgeDevices.add(edgeDevice);
