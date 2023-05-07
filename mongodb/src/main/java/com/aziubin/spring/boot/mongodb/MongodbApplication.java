@@ -10,16 +10,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.domain.Example;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
+import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +45,7 @@ import lombok.Setter;
 @EnableMongoAuditing
 public class MongodbApplication {
 	static final RuntimeMXBean runtimeMXBean = ManagementFactory.getRuntimeMXBean();
+	Logger logger = LoggerFactory.getLogger(MongodbApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(MongodbApplication.class, args);
@@ -51,6 +60,8 @@ public class MongodbApplication {
 	static class RuntimeSnapshot {
 		//@Id UUID uuid; // org.springframework.dao.InvalidDataAccessApiUsageException: Cannot autogenerate id of type java.util.UUID for entity of type com.aziubin.spring.boot.mongodb.MongodbApplication$RuntimeSnapshot
 		@Id String id;
+		
+		@Indexed(unique = true)
 		long pid;
 		java.util.List<String> inputArguments;
 		long uptime;
@@ -72,6 +83,8 @@ public class MongodbApplication {
 	    //StackTraceElement[] stackTraces;
 
 	    @DBRef
+	    //@CascadeSave
+//	    @DocumentReference
 	    Machine machine;
 	}
 	
@@ -86,14 +99,18 @@ public class MongodbApplication {
 		String name;
 
 		@CreatedDate
-	    private long createdDate;
+	    private Long createdDate;
 
 	    @LastModifiedDate
-	    private long modifiedDate;
+	    private Long modifiedDate;
 	}
 
 	@RestController
 	static class JvmSnapshotController {
+		Logger logger = LoggerFactory.getLogger(JvmSnapshotController.class);
+
+		Machine machine = null;
+		
 		@Autowired
 		JvmSnapshotRepository jvmSnapshotRepository;
 		
@@ -105,15 +122,35 @@ public class MongodbApplication {
 		    mappingMongoConverter.setMapKeyDotReplacement("_");
 		}
 		
+	    @Bean
+	    MongoTransactionManager transactionManager(MongoDatabaseFactory dbFactory) {
+	        return new MongoTransactionManager(dbFactory);
+	    }
+
+		@Transactional // ignored
 		@GetMapping("/*")
-		List<RuntimeSnapshot> getJvmSnaphots() {
+		List<RuntimeSnapshot> getJvmSnaphots() throws Exception {
 			//new RuntimeSnapshot(UUID.randomUUID(),runtimeMXBean.getPid(), runtimeMXBean.getInputArguments(), runtimeMXBean.getUptime(), runtimeMXBean.getStartTime(), runtimeMXBean.getSystemProperties());
 //			new RuntimeSnapshot();
 			RuntimeSnapshot runtimeSnapshot;
 			try {
-				Machine machine = Machine.builder().name(InetAddress.getLocalHost().getHostName()).build();
-				jvmMachineRepository.save(machine);
 				
+				// todo upsert
+				if (null == machine) {
+			        Example<Machine> example = Example.of(Machine.builder().name(InetAddress.getLocalHost().getHostName()).build());
+			        long start = System.nanoTime();
+					List<Machine> machines = jvmMachineRepository.findAll(example);
+					// endpoint that was really bothering me with its 700 - 1000ms processing time required. Other endpoints also had respectively rather high fluctuating processing times anywhere between 100 to 400ms
+			        logger.info("findAll {} ", System.nanoTime() - start / 1000. / 1000. / 1000.);  // 1.3  
+
+					if (0 != machines.size()) {
+						machine = machines.get(0);
+					} else {
+						machine = Machine.builder().name(InetAddress.getLocalHost().getHostName()).build();
+						jvmMachineRepository.save(machine);
+					}
+				}
+
 				runtimeSnapshot = RuntimeSnapshot.builder().id(UUID.randomUUID().toString()).pid(runtimeMXBean.getPid())
 						.inputArguments(runtimeMXBean.getInputArguments()).uptime(runtimeMXBean.getUptime())
 						.startTime(runtimeMXBean.getStartTime())
@@ -123,7 +160,12 @@ public class MongodbApplication {
 						 // org.springframework.data.mapping.MappingException: Cannot create a reference to an object with a NULL id
 						.machine(machine)						
 						.build();
+		        long start = System.nanoTime();
+		        if (start > 0) {
+		        	throw new Exception("Rollbvack transaction"); // (-) created new _class "com.aziubin.spring.boot.mongodb.MongodbApplication$Machine"
+		        }
 				jvmSnapshotRepository.save(runtimeSnapshot);
+		        logger.info("save {} ", System.nanoTime() - start / 1000. / 1000. / 1000.);
 				return jvmSnapshotRepository.findAll();
 			} catch (UnknownHostException e) {
 				// TODO Auto-generated catch block
