@@ -1,0 +1,163 @@
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.6)
+
+2023-05-17T17:09:55.796+03:00  INFO 34504 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : Starting KafkaApplication using Java 17.0.6 with PID 34504 (C:\Users\aziub\eclipse-workspace\kafka\target\classes started by aziub in C:\Users\aziub\eclipse-workspace\kafka)
+2023-05-17T17:09:55.812+03:00  INFO 34504 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-17T17:09:55.901+03:00  INFO 34504 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-17T17:09:55.901+03:00  INFO 34504 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-17T17:09:57.602+03:00  INFO 34504 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-17T17:09:57.616+03:00  INFO 34504 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-17T17:09:57.616+03:00  INFO 34504 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-17T17:09:57.749+03:00  INFO 34504 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-17T17:09:57.754+03:00  INFO 34504 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1847 ms
+2023-05-17T17:09:58.532+03:00  INFO 34504 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-17T17:09:58.599+03:00  INFO 34504 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-17T17:09:58.614+03:00  INFO 34504 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : Started KafkaApplication in 3.416 seconds (process running for 4.234)
+2023-05-17T17:10:06.327+03:00  INFO 34504 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-17T17:10:06.327+03:00  INFO 34504 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-17T17:10:06.329+03:00  INFO 34504 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-05-17T17:10:10.343+03:00  INFO 34504 --- [nio-8080-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2023-05-17T17:10:10.452+03:00  INFO 34504 --- [nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2023-05-17T17:10:10.573+03:00  INFO 34504 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-17T17:10:10.575+03:00  INFO 34504 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-17T17:10:10.575+03:00  INFO 34504 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684332610571
+2023-05-17T17:10:11.016+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:11.019+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 0 due to node -1 being disconnected (elapsed time since creation: 100ms, elapsed time since send: 100ms, request timeout: 30000ms)
+2023-05-17T17:10:11.020+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:11.229+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:11.229+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 1 due to node -1 being disconnected (elapsed time since creation: 55ms, elapsed time since send: 55ms, request timeout: 30000ms)
+2023-05-17T17:10:11.229+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:11.496+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:11.496+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 2 due to node -1 being disconnected (elapsed time since creation: 62ms, elapsed time since send: 62ms, request timeout: 30000ms)
+2023-05-17T17:10:11.496+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:11.854+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:11.855+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 3 due to node -1 being disconnected (elapsed time since creation: 50ms, elapsed time since send: 50ms, request timeout: 30000ms)
+2023-05-17T17:10:11.855+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:12.424+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:12.425+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 4 due to node -1 being disconnected (elapsed time since creation: 60ms, elapsed time since send: 60ms, request timeout: 30000ms)
+2023-05-17T17:10:12.425+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:13.214+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:13.214+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 5 due to node -1 being disconnected (elapsed time since creation: 70ms, elapsed time since send: 70ms, request timeout: 30000ms)
+2023-05-17T17:10:13.214+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:14.432+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:14.432+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 6 due to node -1 being disconnected (elapsed time since creation: 54ms, elapsed time since send: 54ms, request timeout: 30000ms)
+2023-05-17T17:10:14.432+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:15.614+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:15.614+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 7 due to node -1 being disconnected (elapsed time since creation: 62ms, elapsed time since send: 62ms, request timeout: 30000ms)
+2023-05-17T17:10:15.614+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:16.738+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:16.738+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 8 due to node -1 being disconnected (elapsed time since creation: 54ms, elapsed time since send: 54ms, request timeout: 30000ms)
+2023-05-17T17:10:16.738+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:17.828+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:17.828+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 9 due to node -1 being disconnected (elapsed time since creation: 64ms, elapsed time since send: 64ms, request timeout: 30000ms)
+2023-05-17T17:10:17.829+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:18.867+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:18.867+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 10 due to node -1 being disconnected (elapsed time since creation: 73ms, elapsed time since send: 73ms, request timeout: 30000ms)
+2023-05-17T17:10:18.867+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:20.093+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:20.093+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 11 due to node -1 being disconnected (elapsed time since creation: 58ms, elapsed time since send: 58ms, request timeout: 30000ms)
+2023-05-17T17:10:20.093+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:21.224+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:21.225+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 12 due to node -1 being disconnected (elapsed time since creation: 61ms, elapsed time since send: 61ms, request timeout: 30000ms)
+2023-05-17T17:10:21.225+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:22.242+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:22.243+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 13 due to node -1 being disconnected (elapsed time since creation: 48ms, elapsed time since send: 48ms, request timeout: 30000ms)
+2023-05-17T17:10:22.244+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected
+2023-05-17T17:10:23.324+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2023-05-17T17:10:23.324+03:00  INFO 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight API_VERSIONS request with correlation id 14 due to node -1 being disconnected (elapsed time since creation: 60ms, elapsed time since send: 60ms, request timeout: 30000ms)
+2023-05-17T17:10:23.324+03:00  WARN 34504 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Bootstrap broker pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: -1 rack: null) disconnected

@@ -66,6 +66,7 @@ public class JavaPersistenceApiTablesApplication {
 			return edgeDevices;
 		}
 
+// todo @Transactional(isolation = Isolation.READ_UNCOMMITTED)
 		@GetMapping("/post")
 		List<EdgeDevice> postEdgeDevice() {
 			EdgeDevice edgeDevice = new EdgeDevice();

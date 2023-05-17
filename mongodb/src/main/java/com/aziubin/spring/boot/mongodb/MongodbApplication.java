@@ -157,7 +157,7 @@ public class MongodbApplication {
             return new MongoTransactionManager(dbFactory);
         }
 
-        @Transactional // ignored
+        @Transactional // ignored without 
         @GetMapping("/*")
         List<RuntimeSnapshot> getJvmSnaphots() throws Exception {
             //new RuntimeSnapshot(UUID.randomUUID(),runtimeMXBean.getPid(), runtimeMXBean.getInputArguments(), runtimeMXBean.getUptime(), runtimeMXBean.getStartTime(), runtimeMXBean.getSystemProperties());

@@ -18,6 +18,13 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa</artifactId>
+<!--            <version>4.0.1</version>-->
+            <version>2.7.10</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
                 <exclusions>
@@ -30,12 +37,6 @@
                         <artifactId>common-annotations</artifactId>
                     </exclusion>
                 </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>org.eclipse.persistence.jpa</artifactId>
-<!--            <version>4.0.1</version>-->
-            <version>2.7.10</version>
         </dependency>
 
         <dependency>

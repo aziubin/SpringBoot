@@ -4,6 +4,7 @@ import com.aziubin.spring.boot.javaPersistenceApiTables.JavaPersistenceApiTables
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,6 +14,8 @@ import jakarta.persistence.ManyToOne;
 @Entity
 class EdgeDevice {
 	@Id @GeneratedValue public long id;
+    //EntityManager ent; 
+
 	public String address;
 
 //	@ManyToOne(optional = false)
@@ -23,12 +26,13 @@ class EdgeDevice {
 	// @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	// Hibernate: select e1_0.id,e1_0.address,e1_0."location_id" from "java_persistence_api_tables_application$edge_device" e1_0
 	// com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0]->com.aziubin.spring.boot.javaPersistenceApiTables.JavaPersistenceApiTablesApplication$EdgeDevice["location"]->com.aziubin.spring.boot.javaPersistenceApiTables.JavaPersistenceApiTablesApplication$Location$HibernateProxy$XzZbHo0k["hibernateLazyInitializer"])
-	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER, cascade=CascadeType.ALL)
 	//@JsonInclude(JsonInclude.Include.NON_NULL)
 	//@Transient
 	// any HQL (with fetch or not) query with FROM EdgeDevice will bring all locations
 	public Location location;
 	
+//	FetchType.LAZY
 //	set	LinkedHashSet<E>  (id=202)	
 //	[0]	EdgeDevice  (id=205)	
 //		address	"bf0a3fc3-b22a-411b-bfa6-d1303d781c9a" (id=208)	

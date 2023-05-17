@@ -16,5 +16,10 @@ public interface EdgeRepository extends CrudRepository<EdgeDevice, Long> {
 // todo	@Query(value = "SELECT e FROM com.aziubin.spring.boot.javaPersistenceApiTables.JavaPersistenceApiTablesApplication EdgeDevice e JOIN FETCH e.location l WHERE e.id = ?1")
 
 	Set<EdgeDevice> getEdgeDeviceById(long id);
+//	@Query(value = "SELECT e FROM EdgeDevice e JOIN FETCH e.location l WHERE e.id = :id")  // Hibernate: select e1_0.id,e1_0.address,e1_0.firmware,l1_0.id,l1_0.name from edge_device e1_0 join "java_persistence_api_tables_application$location" l1_0 on l1_0.id=e1_0."location_id" where e1_0.id=?
+//	Set<EdgeDevice> getEdgeDeviceById(@Param("id") long id);
 
+//	log4j.logger.org.hibernate.SQL=debug 
+//	log4j.logger.org.hibernate.type=trace
+	
 }
