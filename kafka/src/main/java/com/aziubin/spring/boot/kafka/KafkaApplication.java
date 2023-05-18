@@ -68,9 +68,9 @@ public class KafkaApplication {
 	    // spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.StringDeserializer
 	    // Cannot convert from [java.lang.String] to [domain.CustomerVisitEvent] for GenericMessage [payload={"customerId":"e45aabfe-ed57-4775-a526-845bb6838bf5","dateTime":[2023,5,18,18,16,43,634870100]}, headers={kafka_offset=2, kafka_consumer=org.apache.kafka.clients.consumer.KafkaConsumer@1ee66e2b, kafka_timestampType=CREATE_TIME, kafka_receivedPartitionId=5, kafka_receivedTopic=customer_visit_event, kafka_receivedTimestamp=1684423004060, __TypeId__=[B@739519aa, kafka_groupId=group_id3}]
 	    // Caused by: java.lang.IllegalArgumentException: The class 'domain.CustomerVisitEvent' is not in the trusted packages: [java.util, java.lang]. If you believe this class is safe to deserialize, please provide its name. If the serialization is only done by a trusted source, you can also enable trust all (*).
-	    @KafkaListener(topics = CUSTOMER_VISIT_EVENT, groupId = "group_id3")
+	    @KafkaListener(topics = CUSTOMER_VISIT_EVENT, groupId = "group_id4")
 	    public void consumeCustomerVisitEvent(CustomerVisitEvent customerVisitEvent, org.apache.kafka.clients.consumer.ConsumerRecord sdf) throws IOException {
-	        logger.info(String.format("Consumed group_id3; %s", customerVisitEvent));
+	        logger.info(String.format("Consumed CustomerVisitEvent group_id4; %s", customerVisitEvent));
 	    }
 
 	    @GetMapping("/")
