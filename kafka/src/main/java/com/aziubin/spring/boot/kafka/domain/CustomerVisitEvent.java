@@ -1,4 +1,4 @@
-package domain;
+package com.aziubin.spring.boot.kafka.domain;
 
 import java.time.LocalDateTime;
 

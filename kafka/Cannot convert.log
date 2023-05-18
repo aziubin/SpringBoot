@@ -1,0 +1,1802 @@
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.6)
+
+2023-05-18T18:14:19.037+03:00  INFO 100732 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : Starting KafkaApplication using Java 17.0.6 with PID 100732 (C:\Users\aziub\git\SpringBoot\kafka\target\classes started by aziub in C:\Users\aziub\git\SpringBoot\kafka)
+2023-05-18T18:14:19.051+03:00  INFO 100732 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-18T18:14:19.144+03:00  INFO 100732 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-05-18T18:14:19.144+03:00  INFO 100732 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-05-18T18:14:20.839+03:00  INFO 100732 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-18T18:14:20.859+03:00  INFO 100732 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-18T18:14:20.859+03:00  INFO 100732 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-18T18:14:20.966+03:00  INFO 100732 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-18T18:14:20.973+03:00  INFO 100732 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1821 ms
+2023-05-18T18:14:21.707+03:00  INFO 100732 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-18T18:14:21.814+03:00  INFO 100732 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-18T18:14:21.893+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id2-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:14:22.088+03:00  INFO 100732 --- [  restartedMain] o.a.k.c.s.authenticator.AbstractLogin    : Successfully logged in.
+2023-05-18T18:14:22.282+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:14:22.284+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:14:22.284+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422862280
+2023-05-18T18:14:22.289+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:14:22.303+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:14:22.317+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:14:22.318+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:14:22.318+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422862317
+2023-05-18T18:14:22.318+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-2, groupId=group_id] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:14:22.323+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:14:22.335+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:14:22.335+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:14:22.335+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422862335
+2023-05-18T18:14:22.336+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-3, groupId=group_id] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:14:22.341+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id-4
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:14:22.353+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:14:22.354+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:14:22.354+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422862353
+2023-05-18T18:14:22.355+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-4, groupId=group_id] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:14:22.360+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id3-5
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id3
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:14:22.375+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:14:22.376+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:14:22.376+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422862375
+2023-05-18T18:14:22.377+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:14:22.395+03:00  INFO 100732 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : Started KafkaApplication in 3.911 seconds (process running for 4.707)
+2023-05-18T18:14:23.866+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-2, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.866+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-4, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-4, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-2, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-2, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-4, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-2, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-4, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-2, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-4, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-2, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.867+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-4, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.871+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-4, groupId=group_id] Cluster ID: lkc-3rx3p2
+2023-05-18T18:14:23.871+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-2, groupId=group_id] Cluster ID: lkc-3rx3p2
+2023-05-18T18:14:23.872+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Discovered group coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null)
+2023-05-18T18:14:23.872+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Discovered group coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null)
+2023-05-18T18:14:23.879+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.879+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.879+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.879+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.879+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.879+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.880+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Cluster ID: lkc-3rx3p2
+2023-05-18T18:14:23.881+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Discovered group coordinator b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483639 rack: null)
+2023-05-18T18:14:23.881+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.881+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.881+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.882+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.882+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.882+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.882+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Cluster ID: lkc-3rx3p2
+2023-05-18T18:14:23.883+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Discovered group coordinator b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483647 rack: null)
+2023-05-18T18:14:23.892+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-3, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.892+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-3, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.892+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-3, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.892+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-3, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.892+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-3, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.892+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-3, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:23.892+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-3, groupId=group_id] Cluster ID: lkc-3rx3p2
+2023-05-18T18:14:23.897+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Discovered group coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null)
+2023-05-18T18:14:23.924+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] (Re-)joining group
+2023-05-18T18:14:23.924+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] (Re-)joining group
+2023-05-18T18:14:23.924+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] (Re-)joining group
+2023-05-18T18:14:23.929+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] (Re-)joining group
+2023-05-18T18:14:23.972+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] (Re-)joining group
+2023-05-18T18:14:24.376+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Request joining group due to: need to re-join with the given member-id: consumer-group_id3-5-9bd8f1be-3c1b-4e29-9621-b53f310e801d
+2023-05-18T18:14:24.376+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:14:24.376+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] (Re-)joining group
+2023-05-18T18:14:24.384+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Request joining group due to: need to re-join with the given member-id: consumer-group_id2-1-e205d780-2608-4589-b4b7-226f93227ab1
+2023-05-18T18:14:24.384+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:14:24.384+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] (Re-)joining group
+2023-05-18T18:14:24.431+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Successfully joined group with generation Generation{generationId=31, memberId='consumer-group_id3-5-9bd8f1be-3c1b-4e29-9621-b53f310e801d', protocol='range'}
+2023-05-18T18:14:24.433+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Finished assignment for group at generation 31: {consumer-group_id3-5-9bd8f1be-3c1b-4e29-9621-b53f310e801d=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])}
+2023-05-18T18:14:24.437+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Successfully joined group with generation Generation{generationId=36, memberId='consumer-group_id2-1-e205d780-2608-4589-b4b7-226f93227ab1', protocol='range'}
+2023-05-18T18:14:24.437+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Finished assignment for group at generation 36: {consumer-group_id2-1-e205d780-2608-4589-b4b7-226f93227ab1=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])}
+2023-05-18T18:14:24.483+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Request joining group due to: need to re-join with the given member-id: consumer-group_id-3-a170449f-157a-43cc-a8e5-3a8fd9239839
+2023-05-18T18:14:24.483+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:14:24.483+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] (Re-)joining group
+2023-05-18T18:14:24.483+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Request joining group due to: need to re-join with the given member-id: consumer-group_id-2-f4845b6b-d3a2-4461-8fdf-312c8a047678
+2023-05-18T18:14:24.483+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:14:24.483+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] (Re-)joining group
+2023-05-18T18:14:24.489+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Request joining group due to: need to re-join with the given member-id: consumer-group_id-4-49eb54b5-9394-4e60-9735-41a413f798d8
+2023-05-18T18:14:24.489+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:14:24.489+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] (Re-)joining group
+2023-05-18T18:14:24.491+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Successfully synced group in generation Generation{generationId=36, memberId='consumer-group_id2-1-e205d780-2608-4589-b4b7-226f93227ab1', protocol='range'}
+2023-05-18T18:14:24.491+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Notifying assignor about the new Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])
+2023-05-18T18:14:24.494+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Adding newly assigned partitions: customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:14:24.497+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Successfully synced group in generation Generation{generationId=31, memberId='consumer-group_id3-5-9bd8f1be-3c1b-4e29-9621-b53f310e801d', protocol='range'}
+2023-05-18T18:14:24.497+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Notifying assignor about the new Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])
+2023-05-18T18:14:24.497+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Adding newly assigned partitions: customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:14:24.536+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Successfully joined group with generation Generation{generationId=48, memberId='consumer-group_id-3-a170449f-157a-43cc-a8e5-3a8fd9239839', protocol='range'}
+2023-05-18T18:14:24.536+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Finished assignment for group at generation 48: {consumer-group_id-3-a170449f-157a-43cc-a8e5-3a8fd9239839=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])}
+2023-05-18T18:14:24.553+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Setting offset for partition customer_visit_event-0 to the committed offset FetchPosition{offset=6, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b3-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 3 rack: 0)], epoch=0}}
+2023-05-18T18:14:24.553+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Setting offset for partition customer_visit_event-0 to the committed offset FetchPosition{offset=6, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b3-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 3 rack: 0)], epoch=0}}
+2023-05-18T18:14:24.553+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Setting offset for partition customer_visit_event-1 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b1-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 1 rack: 1)], epoch=0}}
+2023-05-18T18:14:24.553+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Setting offset for partition customer_visit_event-1 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b1-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 1 rack: 1)], epoch=0}}
+2023-05-18T18:14:24.553+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Setting offset for partition customer_visit_event-2 to the committed offset FetchPosition{offset=16, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 8 rack: 2)], epoch=0}}
+2023-05-18T18:14:24.553+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Setting offset for partition customer_visit_event-2 to the committed offset FetchPosition{offset=16, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 8 rack: 2)], epoch=0}}
+2023-05-18T18:14:24.554+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Setting offset for partition customer_visit_event-3 to the committed offset FetchPosition{offset=21, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 0 rack: 0)], epoch=0}}
+2023-05-18T18:14:24.554+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Setting offset for partition customer_visit_event-3 to the committed offset FetchPosition{offset=21, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 0 rack: 0)], epoch=0}}
+2023-05-18T18:14:24.554+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Setting offset for partition customer_visit_event-4 to the committed offset FetchPosition{offset=23, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b10-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 10 rack: 1)], epoch=0}}
+2023-05-18T18:14:24.554+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Setting offset for partition customer_visit_event-4 to the committed offset FetchPosition{offset=23, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b10-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 10 rack: 1)], epoch=0}}
+2023-05-18T18:14:24.554+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Setting offset for partition customer_visit_event-5 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b5-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 5 rack: 2)], epoch=0}}
+2023-05-18T18:14:24.554+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Setting offset for partition customer_visit_event-5 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b5-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 5 rack: 2)], epoch=0}}
+2023-05-18T18:14:24.556+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id2: partitions assigned: [customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:14:24.556+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: partitions assigned: [customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:14:24.588+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] SyncGroup failed: The group began another rebalance. Need to re-join the group. Sent generation was Generation{generationId=48, memberId='consumer-group_id-3-a170449f-157a-43cc-a8e5-3a8fd9239839', protocol='range'}
+2023-05-18T18:14:24.588+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Request joining group due to: rebalance failed due to 'The group is rebalancing, so a rejoin is needed.' (RebalanceInProgressException)
+2023-05-18T18:14:24.588+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] (Re-)joining group
+2023-05-18T18:14:24.640+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Successfully joined group with generation Generation{generationId=49, memberId='consumer-group_id-3-a170449f-157a-43cc-a8e5-3a8fd9239839', protocol='range'}
+2023-05-18T18:14:24.640+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Successfully joined group with generation Generation{generationId=49, memberId='consumer-group_id-2-f4845b6b-d3a2-4461-8fdf-312c8a047678', protocol='range'}
+2023-05-18T18:14:24.640+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Successfully joined group with generation Generation{generationId=49, memberId='consumer-group_id-4-49eb54b5-9394-4e60-9735-41a413f798d8', protocol='range'}
+2023-05-18T18:14:24.641+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Finished assignment for group at generation 49: {consumer-group_id-3-a170449f-157a-43cc-a8e5-3a8fd9239839=Assignment(partitions=[customer_visit_event-2, customer_visit_event-3]), consumer-group_id-4-49eb54b5-9394-4e60-9735-41a413f798d8=Assignment(partitions=[customer_visit_event-4, customer_visit_event-5]), consumer-group_id-2-f4845b6b-d3a2-4461-8fdf-312c8a047678=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1])}
+2023-05-18T18:14:24.694+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Successfully synced group in generation Generation{generationId=49, memberId='consumer-group_id-3-a170449f-157a-43cc-a8e5-3a8fd9239839', protocol='range'}
+2023-05-18T18:14:24.694+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Successfully synced group in generation Generation{generationId=49, memberId='consumer-group_id-4-49eb54b5-9394-4e60-9735-41a413f798d8', protocol='range'}
+2023-05-18T18:14:24.694+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Notifying assignor about the new Assignment(partitions=[customer_visit_event-2, customer_visit_event-3])
+2023-05-18T18:14:24.695+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Adding newly assigned partitions: customer_visit_event-2, customer_visit_event-3
+2023-05-18T18:14:24.695+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Notifying assignor about the new Assignment(partitions=[customer_visit_event-4, customer_visit_event-5])
+2023-05-18T18:14:24.695+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Adding newly assigned partitions: customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:14:24.696+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Successfully synced group in generation Generation{generationId=49, memberId='consumer-group_id-2-f4845b6b-d3a2-4461-8fdf-312c8a047678', protocol='range'}
+2023-05-18T18:14:24.697+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Notifying assignor about the new Assignment(partitions=[customer_visit_event-0, customer_visit_event-1])
+2023-05-18T18:14:24.697+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Adding newly assigned partitions: customer_visit_event-0, customer_visit_event-1
+2023-05-18T18:14:24.747+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Setting offset for partition customer_visit_event-3 to the committed offset FetchPosition{offset=21, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 0 rack: 0)], epoch=0}}
+2023-05-18T18:14:24.747+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Setting offset for partition customer_visit_event-4 to the committed offset FetchPosition{offset=23, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b10-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 10 rack: 1)], epoch=0}}
+2023-05-18T18:14:24.747+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Setting offset for partition customer_visit_event-5 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b5-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 5 rack: 2)], epoch=0}}
+2023-05-18T18:14:24.747+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Setting offset for partition customer_visit_event-2 to the committed offset FetchPosition{offset=16, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 8 rack: 2)], epoch=0}}
+2023-05-18T18:14:24.756+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Setting offset for partition customer_visit_event-0 to the committed offset FetchPosition{offset=6, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b3-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 3 rack: 0)], epoch=0}}
+2023-05-18T18:14:24.757+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Setting offset for partition customer_visit_event-1 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b1-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 1 rack: 1)], epoch=0}}
+2023-05-18T18:14:24.847+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions assigned: [customer_visit_event-2, customer_visit_event-3]
+2023-05-18T18:14:24.847+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions assigned: [customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:14:24.859+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions assigned: [customer_visit_event-0, customer_visit_event-1]
+2023-05-18T18:14:32.612+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-18T18:14:32.612+03:00  INFO 100732 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-18T18:14:32.617+03:00  INFO 100732 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-05-18T18:14:37.218+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2023-05-18T18:14:37.806+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2023-05-18T18:14:38.561+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:14:38.566+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:14:38.570+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422878560
+2023-05-18T18:14:39.058+03:00  INFO 100732 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:39.059+03:00  INFO 100732 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:39.059+03:00  INFO 100732 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:39.059+03:00  INFO 100732 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:39.059+03:00  INFO 100732 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:39.059+03:00  INFO 100732 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:14:39.060+03:00  INFO 100732 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: lkc-3rx3p2
+2023-05-18T18:14:39.060+03:00  INFO 100732 --- [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 9612601 with epoch 0
+2023-05-18T18:14:41.583+03:00  INFO 100732 --- [ntainer#1-0-C-1] s.b.k.KafkaApplication$RestfulController : Consumed group_id3; {"customerId":"64105d93-3970-4646-9729-ef9991b2deed","dateTime":[2023,5,18,18,14,35,847246100]}
+2023-05-18T18:14:41.583+03:00  INFO 100732 --- [ntainer#2-0-C-1] s.b.k.KafkaApplication$RestfulController : Consumed group_id2; {"customerId":"64105d93-3970-4646-9729-ef9991b2deed","dateTime":[2023,5,18,18,14,35,847246100]}
+2023-05-18T18:14:41.583+03:00  INFO 100732 --- [ntainer#4-0-C-1] s.b.k.KafkaApplication$RestfulController : Consumed group_id c; {"customerId":"64105d93-3970-4646-9729-ef9991b2deed","dateTime":[2023,5,18,18,14,35,847246100]}
+2023-05-18T18:16:28.768+03:00  INFO 100732 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Revoke previously assigned partitions customer_visit_event-2, customer_visit_event-3
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Revoke previously assigned partitions customer_visit_event-0, customer_visit_event-1
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Revoke previously assigned partitions customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Revoke previously assigned partitions customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Revoke previously assigned partitions customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions revoked: [customer_visit_event-0, customer_visit_event-1]
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions revoked: [customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: partitions revoked: [customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id2: partitions revoked: [customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:16:28.774+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions revoked: [customer_visit_event-2, customer_visit_event-3]
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Member consumer-group_id3-5-9bd8f1be-3c1b-4e29-9621-b53f310e801d sending LeaveGroup request to coordinator b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483639 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Member consumer-group_id-2-f4845b6b-d3a2-4461-8fdf-312c8a047678 sending LeaveGroup request to coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Member consumer-group_id-3-a170449f-157a-43cc-a8e5-3a8fd9239839 sending LeaveGroup request to coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Member consumer-group_id2-1-e205d780-2608-4589-b4b7-226f93227ab1 sending LeaveGroup request to coordinator b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Member consumer-group_id-4-49eb54b5-9394-4e60-9735-41a413f798d8 sending LeaveGroup request to coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-4, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.777+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-3, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:16:28.777+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-2, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:16:28.776+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:16:28.777+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.777+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.777+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.777+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-3, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.777+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-1, groupId=group_id2] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.777+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-4, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.779+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.779+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-2, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.779+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.779+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-5, groupId=group_id3] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:16:28.827+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:16:28.828+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:16:28.828+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:16:28.828+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:16:28.828+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:16:28.829+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:16:28.829+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:16:28.829+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:16:28.830+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:16:28.830+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:16:28.830+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:16:28.830+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:16:28.838+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:16:28.838+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:16:28.838+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:16:28.841+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id-4 unregistered
+2023-05-18T18:16:28.841+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: Consumer stopped
+2023-05-18T18:16:28.845+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id-2 unregistered
+2023-05-18T18:16:28.846+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: Consumer stopped
+2023-05-18T18:16:28.847+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id-3 unregistered
+2023-05-18T18:16:28.847+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: Consumer stopped
+2023-05-18T18:16:28.848+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id2-1 unregistered
+2023-05-18T18:16:28.848+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id2: Consumer stopped
+2023-05-18T18:16:28.849+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id3-5 unregistered
+2023-05-18T18:16:28.849+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: Consumer stopped
+2023-05-18T18:16:28.868+03:00  INFO 100732 --- [       Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-18T18:16:28.870+03:00  INFO 100732 --- [       Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-18T18:16:28.881+03:00  WARN 100732 --- [       Thread-5] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [kafka-producer-network-thread | producer-1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/sun.nio.ch.WEPoll.wait(Native Method)
+ java.base@17.0.6/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:111)
+ java.base@17.0.6/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.6/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ app//org.apache.kafka.common.network.Selector.select(Selector.java:873)
+ app//org.apache.kafka.common.network.Selector.poll(Selector.java:465)
+ app//org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:560)
+ app//org.apache.kafka.clients.producer.internals.Sender.runOnce(Sender.java:328)
+ app//org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:243)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-05-18T18:16:28.891+03:00  INFO 100732 --- [       Thread-5] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2023-05-18T18:16:28.897+03:00  INFO 100732 --- [       Thread-5] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:16:28.897+03:00  INFO 100732 --- [       Thread-5] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:16:28.897+03:00  INFO 100732 --- [       Thread-5] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:16:28.897+03:00  INFO 100732 --- [       Thread-5] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for producer-1 unregistered
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.6)
+
+2023-05-18T18:16:29.014+03:00  INFO 100732 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : Starting KafkaApplication using Java 17.0.6 with PID 100732 (C:\Users\aziub\git\SpringBoot\kafka\target\classes started by aziub in C:\Users\aziub\git\SpringBoot\kafka)
+2023-05-18T18:16:29.014+03:00  INFO 100732 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-05-18T18:16:29.500+03:00  INFO 100732 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-05-18T18:16:29.500+03:00  INFO 100732 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-05-18T18:16:29.501+03:00  INFO 100732 --- [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-18T18:16:29.527+03:00  INFO 100732 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-05-18T18:16:29.528+03:00  INFO 100732 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 508 ms
+2023-05-18T18:16:29.729+03:00  INFO 100732 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-05-18T18:16:29.788+03:00  INFO 100732 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-18T18:16:29.792+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id2-6
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:16:29.851+03:00  INFO 100732 --- [  restartedMain] o.a.k.c.s.authenticator.AbstractLogin    : Successfully logged in.
+2023-05-18T18:16:29.863+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:16:29.863+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:16:29.864+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422989863
+2023-05-18T18:16:29.864+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:16:29.868+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id-7
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:16:29.875+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:16:29.876+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:16:29.876+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422989875
+2023-05-18T18:16:29.876+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-7, groupId=group_id] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:16:29.883+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id-8
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:16:29.891+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:16:29.891+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:16:29.892+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422989891
+2023-05-18T18:16:29.892+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-8, groupId=group_id] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:16:29.897+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id3-9
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id3
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:16:29.908+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:16:29.909+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:16:29.909+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422989908
+2023-05-18T18:16:29.909+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:16:29.919+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id-10
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:16:29.927+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:16:29.928+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:16:29.928+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422989927
+2023-05-18T18:16:29.929+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-10, groupId=group_id] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:16:29.933+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-group_id3-11
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = group_id3
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2023-05-18T18:16:29.944+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:16:29.945+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:16:29.945+03:00  INFO 100732 --- [  restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684422989944
+2023-05-18T18:16:29.946+03:00  INFO 100732 --- [  restartedMain] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Subscribed to topic(s): customer_visit_event
+2023-05-18T18:16:29.953+03:00  INFO 100732 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : Started KafkaApplication in 0.995 seconds (process running for 132.265)
+2023-05-18T18:16:29.957+03:00  INFO 100732 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-05-18T18:16:30.418+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.418+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.418+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.418+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.418+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.418+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.419+03:00  INFO 100732 --- [ntainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Cluster ID: lkc-3rx3p2
+2023-05-18T18:16:30.419+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Discovered group coordinator b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483647 rack: null)
+2023-05-18T18:16:30.454+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-8, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.454+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-8, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.454+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-8, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.454+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-8, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.454+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-8, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.454+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-8, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.455+03:00  INFO 100732 --- [ntainer#4-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-8, groupId=group_id] Cluster ID: lkc-3rx3p2
+2023-05-18T18:16:30.455+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Discovered group coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null)
+2023-05-18T18:16:30.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.476+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] (Re-)joining group
+2023-05-18T18:16:30.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.477+03:00  INFO 100732 --- [ntainer#5-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Cluster ID: lkc-3rx3p2
+2023-05-18T18:16:30.477+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-7, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.477+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-7, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.477+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-7, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.478+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-7, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.478+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-7, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.478+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-7, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.478+03:00  INFO 100732 --- [ntainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-7, groupId=group_id] Cluster ID: lkc-3rx3p2
+2023-05-18T18:16:30.478+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Discovered group coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null)
+2023-05-18T18:16:30.479+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Discovered group coordinator b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483639 rack: null)
+2023-05-18T18:16:30.488+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-10, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.488+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-10, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.488+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-10, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.489+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-10, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.489+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-10, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.489+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-10, groupId=group_id] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.489+03:00  INFO 100732 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id-10, groupId=group_id] Cluster ID: lkc-3rx3p2
+2023-05-18T18:16:30.489+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Discovered group coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null)
+2023-05-18T18:16:30.512+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] (Re-)joining group
+2023-05-18T18:16:30.513+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] (Re-)joining group
+2023-05-18T18:16:30.513+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] (Re-)joining group
+2023-05-18T18:16:30.547+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.547+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.547+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.547+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.547+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.548+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:30.548+03:00  INFO 100732 --- [ntainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Cluster ID: lkc-3rx3p2
+2023-05-18T18:16:30.548+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Discovered group coordinator b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483639 rack: null)
+2023-05-18T18:16:30.548+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] (Re-)joining group
+2023-05-18T18:16:30.550+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] (Re-)joining group
+2023-05-18T18:16:30.891+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Request joining group due to: need to re-join with the given member-id: consumer-group_id2-6-5b534416-0f2f-4c9b-bdea-a9491c8935d1
+2023-05-18T18:16:30.892+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:16:30.892+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] (Re-)joining group
+2023-05-18T18:16:30.934+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Request joining group due to: need to re-join with the given member-id: consumer-group_id-7-dc4e6933-0a50-4d9b-9701-d6d4a506549e
+2023-05-18T18:16:30.934+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:16:30.934+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] (Re-)joining group
+2023-05-18T18:16:30.940+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Successfully joined group with generation Generation{generationId=38, memberId='consumer-group_id2-6-5b534416-0f2f-4c9b-bdea-a9491c8935d1', protocol='range'}
+2023-05-18T18:16:30.940+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Finished assignment for group at generation 38: {consumer-group_id2-6-5b534416-0f2f-4c9b-bdea-a9491c8935d1=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])}
+2023-05-18T18:16:30.949+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Request joining group due to: need to re-join with the given member-id: consumer-group_id-8-9149e8c1-c236-44a7-8b68-e803a733ca8b
+2023-05-18T18:16:30.949+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:16:30.949+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Request joining group due to: need to re-join with the given member-id: consumer-group_id-10-3d750337-8bae-4758-82c1-f21a8a2fa93c
+2023-05-18T18:16:30.949+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] (Re-)joining group
+2023-05-18T18:16:30.949+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:16:30.949+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] (Re-)joining group
+2023-05-18T18:16:30.989+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Successfully joined group with generation Generation{generationId=51, memberId='consumer-group_id-7-dc4e6933-0a50-4d9b-9701-d6d4a506549e', protocol='range'}
+2023-05-18T18:16:30.989+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Finished assignment for group at generation 51: {consumer-group_id-7-dc4e6933-0a50-4d9b-9701-d6d4a506549e=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])}
+2023-05-18T18:16:30.991+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Successfully synced group in generation Generation{generationId=38, memberId='consumer-group_id2-6-5b534416-0f2f-4c9b-bdea-a9491c8935d1', protocol='range'}
+2023-05-18T18:16:30.993+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Notifying assignor about the new Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])
+2023-05-18T18:16:30.993+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Adding newly assigned partitions: customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:16:31.039+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] SyncGroup failed: The group began another rebalance. Need to re-join the group. Sent generation was Generation{generationId=51, memberId='consumer-group_id-7-dc4e6933-0a50-4d9b-9701-d6d4a506549e', protocol='range'}
+2023-05-18T18:16:31.039+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Request joining group due to: rebalance failed due to 'The group is rebalancing, so a rejoin is needed.' (RebalanceInProgressException)
+2023-05-18T18:16:31.039+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] (Re-)joining group
+2023-05-18T18:16:31.045+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Setting offset for partition customer_visit_event-0 to the committed offset FetchPosition{offset=6, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b3-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 3 rack: 0)], epoch=0}}
+2023-05-18T18:16:31.045+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Setting offset for partition customer_visit_event-1 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b1-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 1 rack: 1)], epoch=0}}
+2023-05-18T18:16:31.045+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Setting offset for partition customer_visit_event-2 to the committed offset FetchPosition{offset=16, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 8 rack: 2)], epoch=0}}
+2023-05-18T18:16:31.045+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Setting offset for partition customer_visit_event-3 to the committed offset FetchPosition{offset=22, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 0 rack: 0)], epoch=0}}
+2023-05-18T18:16:31.045+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Setting offset for partition customer_visit_event-4 to the committed offset FetchPosition{offset=23, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b10-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 10 rack: 1)], epoch=0}}
+2023-05-18T18:16:31.045+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Setting offset for partition customer_visit_event-5 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b5-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 5 rack: 2)], epoch=0}}
+2023-05-18T18:16:31.080+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Request joining group due to: need to re-join with the given member-id: consumer-group_id3-9-05d09e45-824f-4c4f-927b-1ceaa7d4d308
+2023-05-18T18:16:31.080+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:16:31.080+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] (Re-)joining group
+2023-05-18T18:16:31.080+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Request joining group due to: need to re-join with the given member-id: consumer-group_id3-11-eea64f2f-32ec-4261-9e99-83d4e722518c
+2023-05-18T18:16:31.081+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2023-05-18T18:16:31.081+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] (Re-)joining group
+2023-05-18T18:16:31.090+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Successfully joined group with generation Generation{generationId=52, memberId='consumer-group_id-7-dc4e6933-0a50-4d9b-9701-d6d4a506549e', protocol='range'}
+2023-05-18T18:16:31.090+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Finished assignment for group at generation 52: {consumer-group_id-7-dc4e6933-0a50-4d9b-9701-d6d4a506549e=Assignment(partitions=[customer_visit_event-2, customer_visit_event-3]), consumer-group_id-8-9149e8c1-c236-44a7-8b68-e803a733ca8b=Assignment(partitions=[customer_visit_event-4, customer_visit_event-5]), consumer-group_id-10-3d750337-8bae-4758-82c1-f21a8a2fa93c=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1])}
+2023-05-18T18:16:31.091+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Successfully joined group with generation Generation{generationId=52, memberId='consumer-group_id-8-9149e8c1-c236-44a7-8b68-e803a733ca8b', protocol='range'}
+2023-05-18T18:16:31.091+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Successfully joined group with generation Generation{generationId=52, memberId='consumer-group_id-10-3d750337-8bae-4758-82c1-f21a8a2fa93c', protocol='range'}
+2023-05-18T18:16:31.130+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Successfully joined group with generation Generation{generationId=33, memberId='consumer-group_id3-9-05d09e45-824f-4c4f-927b-1ceaa7d4d308', protocol='range'}
+2023-05-18T18:16:31.130+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Finished assignment for group at generation 33: {consumer-group_id3-9-05d09e45-824f-4c4f-927b-1ceaa7d4d308=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])}
+2023-05-18T18:16:31.146+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id2: partitions assigned: [customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:16:31.149+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Successfully synced group in generation Generation{generationId=52, memberId='consumer-group_id-7-dc4e6933-0a50-4d9b-9701-d6d4a506549e', protocol='range'}
+2023-05-18T18:16:31.149+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Notifying assignor about the new Assignment(partitions=[customer_visit_event-2, customer_visit_event-3])
+2023-05-18T18:16:31.149+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Adding newly assigned partitions: customer_visit_event-2, customer_visit_event-3
+2023-05-18T18:16:31.151+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Successfully synced group in generation Generation{generationId=52, memberId='consumer-group_id-8-9149e8c1-c236-44a7-8b68-e803a733ca8b', protocol='range'}
+2023-05-18T18:16:31.151+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Notifying assignor about the new Assignment(partitions=[customer_visit_event-4, customer_visit_event-5])
+2023-05-18T18:16:31.151+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Adding newly assigned partitions: customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:16:31.152+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Successfully synced group in generation Generation{generationId=52, memberId='consumer-group_id-10-3d750337-8bae-4758-82c1-f21a8a2fa93c', protocol='range'}
+2023-05-18T18:16:31.152+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Notifying assignor about the new Assignment(partitions=[customer_visit_event-0, customer_visit_event-1])
+2023-05-18T18:16:31.152+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Adding newly assigned partitions: customer_visit_event-0, customer_visit_event-1
+2023-05-18T18:16:31.181+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] SyncGroup failed: The group began another rebalance. Need to re-join the group. Sent generation was Generation{generationId=33, memberId='consumer-group_id3-9-05d09e45-824f-4c4f-927b-1ceaa7d4d308', protocol='range'}
+2023-05-18T18:16:31.181+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Request joining group due to: rebalance failed due to 'The group is rebalancing, so a rejoin is needed.' (RebalanceInProgressException)
+2023-05-18T18:16:31.181+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] (Re-)joining group
+2023-05-18T18:16:31.206+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Setting offset for partition customer_visit_event-3 to the committed offset FetchPosition{offset=22, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 0 rack: 0)], epoch=0}}
+2023-05-18T18:16:31.206+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Setting offset for partition customer_visit_event-2 to the committed offset FetchPosition{offset=16, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 8 rack: 2)], epoch=0}}
+2023-05-18T18:16:31.206+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions assigned: [customer_visit_event-2, customer_visit_event-3]
+2023-05-18T18:16:31.206+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Setting offset for partition customer_visit_event-4 to the committed offset FetchPosition{offset=23, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b10-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 10 rack: 1)], epoch=0}}
+2023-05-18T18:16:31.206+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Setting offset for partition customer_visit_event-5 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b5-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 5 rack: 2)], epoch=0}}
+2023-05-18T18:16:31.207+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Setting offset for partition customer_visit_event-0 to the committed offset FetchPosition{offset=6, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b3-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 3 rack: 0)], epoch=0}}
+2023-05-18T18:16:31.207+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Setting offset for partition customer_visit_event-1 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b1-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 1 rack: 1)], epoch=0}}
+2023-05-18T18:16:31.207+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions assigned: [customer_visit_event-0, customer_visit_event-1]
+2023-05-18T18:16:31.235+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Successfully joined group with generation Generation{generationId=34, memberId='consumer-group_id3-9-05d09e45-824f-4c4f-927b-1ceaa7d4d308', protocol='range'}
+2023-05-18T18:16:31.235+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Finished assignment for group at generation 34: {consumer-group_id3-11-eea64f2f-32ec-4261-9e99-83d4e722518c=Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2]), consumer-group_id3-9-05d09e45-824f-4c4f-927b-1ceaa7d4d308=Assignment(partitions=[customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])}
+2023-05-18T18:16:31.237+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Successfully joined group with generation Generation{generationId=34, memberId='consumer-group_id3-11-eea64f2f-32ec-4261-9e99-83d4e722518c', protocol='range'}
+2023-05-18T18:16:31.289+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Successfully synced group in generation Generation{generationId=34, memberId='consumer-group_id3-9-05d09e45-824f-4c4f-927b-1ceaa7d4d308', protocol='range'}
+2023-05-18T18:16:31.289+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Notifying assignor about the new Assignment(partitions=[customer_visit_event-3, customer_visit_event-4, customer_visit_event-5])
+2023-05-18T18:16:31.289+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Adding newly assigned partitions: customer_visit_event-3, customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:16:31.292+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Successfully synced group in generation Generation{generationId=34, memberId='consumer-group_id3-11-eea64f2f-32ec-4261-9e99-83d4e722518c', protocol='range'}
+2023-05-18T18:16:31.292+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Notifying assignor about the new Assignment(partitions=[customer_visit_event-0, customer_visit_event-1, customer_visit_event-2])
+2023-05-18T18:16:31.292+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Adding newly assigned partitions: customer_visit_event-0, customer_visit_event-1, customer_visit_event-2
+2023-05-18T18:16:31.307+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions assigned: [customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:16:31.340+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Setting offset for partition customer_visit_event-3 to the committed offset FetchPosition{offset=22, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 0 rack: 0)], epoch=0}}
+2023-05-18T18:16:31.340+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Setting offset for partition customer_visit_event-4 to the committed offset FetchPosition{offset=23, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b10-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 10 rack: 1)], epoch=0}}
+2023-05-18T18:16:31.341+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Setting offset for partition customer_visit_event-5 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b5-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 5 rack: 2)], epoch=0}}
+2023-05-18T18:16:31.348+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Setting offset for partition customer_visit_event-0 to the committed offset FetchPosition{offset=6, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b3-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 3 rack: 0)], epoch=0}}
+2023-05-18T18:16:31.348+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Setting offset for partition customer_visit_event-1 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b1-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 1 rack: 1)], epoch=0}}
+2023-05-18T18:16:31.348+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Setting offset for partition customer_visit_event-2 to the committed offset FetchPosition{offset=16, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 8 rack: 2)], epoch=0}}
+2023-05-18T18:16:31.442+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: partitions assigned: [customer_visit_event-3, customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:16:31.448+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: partitions assigned: [customer_visit_event-0, customer_visit_event-1, customer_visit_event-2]
+2023-05-18T18:16:40.749+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-18T18:16:40.750+03:00  INFO 100732 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-05-18T18:16:40.750+03:00  INFO 100732 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-05-18T18:16:43.635+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [pkc-4nmjv.francecentral.azure.confluent.cloud:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-2
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = PLAIN
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2023-05-18T18:16:43.635+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-2] Instantiated an idempotent producer.
+2023-05-18T18:16:43.640+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.3.2
+2023-05-18T18:16:43.640+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: b66af662e61082cb
+2023-05-18T18:16:43.640+03:00  INFO 100732 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1684423003640
+2023-05-18T18:16:44.059+03:00  INFO 100732 --- [ad | producer-2] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-2] Resetting the last seen epoch of partition customer_visit_event-0 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:44.059+03:00  INFO 100732 --- [ad | producer-2] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-2] Resetting the last seen epoch of partition customer_visit_event-5 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:44.059+03:00  INFO 100732 --- [ad | producer-2] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-2] Resetting the last seen epoch of partition customer_visit_event-4 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:44.059+03:00  INFO 100732 --- [ad | producer-2] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-2] Resetting the last seen epoch of partition customer_visit_event-1 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:44.059+03:00  INFO 100732 --- [ad | producer-2] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-2] Resetting the last seen epoch of partition customer_visit_event-2 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:44.059+03:00  INFO 100732 --- [ad | producer-2] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-2] Resetting the last seen epoch of partition customer_visit_event-3 to 0 since the associated topicId changed from null to tAP3WG1FSOWpNkL_ftYUiQ
+2023-05-18T18:16:44.059+03:00  INFO 100732 --- [ad | producer-2] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-2] Cluster ID: lkc-3rx3p2
+2023-05-18T18:16:44.060+03:00  INFO 100732 --- [ad | producer-2] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-2] ProducerId set to 9616554 with epoch 0
+2023-05-18T18:16:44.510+03:00  INFO 100732 --- [ntainer#2-0-C-1] s.b.k.KafkaApplication$RestfulController : Consumed group_id2; {"customerId":"e45aabfe-ed57-4775-a526-845bb6838bf5","dateTime":[2023,5,18,18,16,43,634870100]}
+2023-05-18T18:16:44.510+03:00  INFO 100732 --- [ntainer#4-0-C-1] s.b.k.KafkaApplication$RestfulController : Consumed group_id c; {"customerId":"e45aabfe-ed57-4775-a526-845bb6838bf5","dateTime":[2023,5,18,18,16,43,634870100]}
+2023-05-18T18:16:44.526+03:00 ERROR 100732 --- [ntainer#5-0-C-1] o.s.kafka.listener.DefaultErrorHandler   : Backoff FixedBackOff{interval=0, currentAttempts=1, maxAttempts=0} exhausted for customer_visit_event-5@2
+
+org.springframework.kafka.listener.ListenerExecutionFailedException: Listener method could not be invoked with the incoming message
+Endpoint handler details:
+Method [public void com.aziubin.spring.boot.kafka.KafkaApplication$RestfulController.consumeCustomerVisitEvent(domain.CustomerVisitEvent,org.apache.kafka.clients.consumer.ConsumerRecord) throws java.io.IOException]
+Bean [com.aziubin.spring.boot.kafka.KafkaApplication$RestfulController@73639c87]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.decorateException(KafkaMessageListenerContainer.java:2988) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2933) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeOnMessage(KafkaMessageListenerContainer.java:2899) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.lambda$doInvokeRecordListener$58(KafkaMessageListenerContainer.java:2822) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at io.micrometer.observation.Observation.observe(Observation.java:562) ~[micrometer-observation-1.10.6.jar:1.10.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeRecordListener(KafkaMessageListenerContainer.java:2820) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeWithRecords(KafkaMessageListenerContainer.java:2672) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeRecordListener(KafkaMessageListenerContainer.java:2558) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeListener(KafkaMessageListenerContainer.java:2200) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.invokeIfHaveRecords(KafkaMessageListenerContainer.java:1555) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1519) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1394) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+	Suppressed: org.springframework.kafka.listener.ListenerExecutionFailedException: Restored Stack Trace
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.checkAckArg(MessagingMessageListenerAdapter.java:393) ~[spring-kafka-3.0.6.jar:3.0.6]
+		at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:371) ~[spring-kafka-3.0.6.jar:3.0.6]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-3.0.6.jar:3.0.6]
+		at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-3.0.6.jar:3.0.6]
+		at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2919) ~[spring-kafka-3.0.6.jar:3.0.6]
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot handle message
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:371) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:92) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.adapter.RecordMessagingMessageListenerAdapter.onMessage(RecordMessagingMessageListenerAdapter.java:53) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doInvokeOnMessage(KafkaMessageListenerContainer.java:2919) ~[spring-kafka-3.0.6.jar:3.0.6]
+	... 12 common frames omitted
+Caused by: org.springframework.messaging.converter.MessageConversionException: Cannot convert from [java.lang.String] to [domain.CustomerVisitEvent] for GenericMessage [payload={"customerId":"e45aabfe-ed57-4775-a526-845bb6838bf5","dateTime":[2023,5,18,18,16,43,634870100]}, headers={kafka_offset=2, kafka_consumer=org.apache.kafka.clients.consumer.KafkaConsumer@1ee66e2b, kafka_timestampType=CREATE_TIME, kafka_receivedPartitionId=5, kafka_receivedTopic=customer_visit_event, kafka_receivedTimestamp=1684423004060, __TypeId__=[B@739519aa, kafka_groupId=group_id3}]
+	at org.springframework.messaging.handler.annotation.support.PayloadMethodArgumentResolver.resolveArgument(PayloadMethodArgumentResolver.java:148) ~[spring-messaging-6.0.8.jar:6.0.8]
+	at org.springframework.kafka.annotation.KafkaNullAwarePayloadArgumentResolver.resolveArgument(KafkaNullAwarePayloadArgumentResolver.java:46) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:118) ~[spring-messaging-6.0.8.jar:6.0.8]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:147) ~[spring-messaging-6.0.8.jar:6.0.8]
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:115) ~[spring-messaging-6.0.8.jar:6.0.8]
+	at org.springframework.kafka.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:56) ~[spring-kafka-3.0.6.jar:3.0.6]
+	at org.springframework.kafka.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:366) ~[spring-kafka-3.0.6.jar:3.0.6]
+	... 15 common frames omitted
+
+2023-05-18T18:17:37.471+03:00  INFO 100732 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2023-05-18T18:17:37.473+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Revoke previously assigned partitions customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:17:37.473+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id2: partitions revoked: [customer_visit_event-0, customer_visit_event-1, customer_visit_event-2, customer_visit_event-3, customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:17:37.473+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Revoke previously assigned partitions customer_visit_event-2, customer_visit_event-3
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions revoked: [customer_visit_event-2, customer_visit_event-3]
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Member consumer-group_id2-6-5b534416-0f2f-4c9b-bdea-a9491c8935d1 sending LeaveGroup request to coordinator b0-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Member consumer-group_id-7-dc4e6933-0a50-4d9b-9701-d6d4a506549e sending LeaveGroup request to coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-7, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:17:37.474+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-7, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id2-6, groupId=group_id2] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Revoke previously assigned partitions customer_visit_event-3, customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Revoke previously assigned partitions customer_visit_event-0, customer_visit_event-1, customer_visit_event-2
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: partitions revoked: [customer_visit_event-3, customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: partitions revoked: [customer_visit_event-0, customer_visit_event-1, customer_visit_event-2]
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Member consumer-group_id3-9-05d09e45-824f-4c4f-927b-1ceaa7d4d308 sending LeaveGroup request to coordinator b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483639 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:17:37.475+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Member consumer-group_id3-11-eea64f2f-32ec-4261-9e99-83d4e722518c sending LeaveGroup request to coordinator b8-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483639 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Revoke previously assigned partitions customer_visit_event-4, customer_visit_event-5
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions revoked: [customer_visit_event-4, customer_visit_event-5]
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Revoke previously assigned partitions customer_visit_event-0, customer_visit_event-1
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Member consumer-group_id-8-9149e8c1-c236-44a7-8b68-e803a733ca8b sending LeaveGroup request to coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: partitions revoked: [customer_visit_event-0, customer_visit_event-1]
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Member consumer-group_id-10-3d750337-8bae-4758-82c1-f21a8a2fa93c sending LeaveGroup request to coordinator b4-pkc-4nmjv.francecentral.azure.confluent.cloud:9092 (id: 2147483643 rack: null) due to the consumer unsubscribed from all topics
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.476+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-8, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:17:37.477+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.477+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-9, groupId=group_id3] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.477+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.477+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-group_id-10, groupId=group_id] Unsubscribed all topics or patterns and assigned partitions
+2023-05-18T18:17:37.477+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.477+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id3-11, groupId=group_id3] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.478+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.478+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-8, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.479+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Resetting generation and member id due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.479+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-group_id-10, groupId=group_id] Request joining group due to: consumer pro-actively leaving the group
+2023-05-18T18:17:37.530+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:17:37.530+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:17:37.531+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:17:37.532+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:17:37.532+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:17:37.532+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:17:37.534+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:17:37.535+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:17:37.535+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:17:37.534+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id-7 unregistered
+2023-05-18T18:17:37.536+03:00  INFO 100732 --- [ntainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: Consumer stopped
+2023-05-18T18:17:37.536+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:17:37.536+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:17:37.537+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:17:37.538+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:17:37.538+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:17:37.538+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:17:37.542+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id3-9 unregistered
+2023-05-18T18:17:37.542+03:00  INFO 100732 --- [ntainer#5-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: Consumer stopped
+2023-05-18T18:17:37.543+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id-10 unregistered
+2023-05-18T18:17:37.543+03:00  INFO 100732 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: Consumer stopped
+2023-05-18T18:17:37.543+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id-8 unregistered
+2023-05-18T18:17:37.543+03:00  INFO 100732 --- [ntainer#4-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id: Consumer stopped
+2023-05-18T18:17:37.543+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id3-11 unregistered
+2023-05-18T18:17:37.543+03:00  INFO 100732 --- [ntainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id3: Consumer stopped
+2023-05-18T18:17:37.648+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:17:37.648+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:17:37.648+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:17:37.651+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-group_id2-6 unregistered
+2023-05-18T18:17:37.651+03:00  INFO 100732 --- [ntainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : group_id2: Consumer stopped
+2023-05-18T18:17:37.663+03:00  INFO 100732 --- [       Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-05-18T18:17:37.663+03:00  INFO 100732 --- [       Thread-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-05-18T18:17:37.667+03:00  WARN 100732 --- [       Thread-7] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [kafka-producer-network-thread | producer-2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.6/sun.nio.ch.WEPoll.wait(Native Method)
+ java.base@17.0.6/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:111)
+ java.base@17.0.6/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:129)
+ java.base@17.0.6/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:141)
+ app//org.apache.kafka.common.network.Selector.select(Selector.java:873)
+ app//org.apache.kafka.common.network.Selector.poll(Selector.java:465)
+ app//org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:560)
+ app//org.apache.kafka.clients.producer.internals.Sender.runOnce(Sender.java:328)
+ app//org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:243)
+ java.base@17.0.6/java.lang.Thread.run(Thread.java:833)
+2023-05-18T18:17:37.670+03:00  INFO 100732 --- [       Thread-7] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-2] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2023-05-18T18:17:37.673+03:00  INFO 100732 --- [       Thread-7] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2023-05-18T18:17:37.673+03:00  INFO 100732 --- [       Thread-7] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-05-18T18:17:37.673+03:00  INFO 100732 --- [       Thread-7] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2023-05-18T18:17:37.673+03:00  INFO 100732 --- [       Thread-7] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for producer-2 unregistered
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.6)
+
+2023-05-18T18:17:37.784+03:00  INFO 100732 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : Starting KafkaApplication using Java 17.0.6 with PID 100732 (C:\Users\aziub\git\SpringBoot\kafka\target\classes started by aziub in C:\Users\aziub\git\SpringBoot\kafka)
+2023-05-18T18:17:37.785+03:00  INFO 100732 --- [  restartedMain] c.a.spring.boot.kafka.KafkaApplication   : No active profile set, falling back to 1 default profile: "default"

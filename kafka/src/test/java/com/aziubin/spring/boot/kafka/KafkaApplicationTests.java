@@ -1,5 +1,7 @@
 package com.aziubin.spring.boot.kafka;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutionException;
@@ -16,6 +18,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 
+import com.aziubin.spring.boot.kafka.domain.CustomerVisitEvent;
+
 @SpringBootTest
 class KafkaApplicationTests {
     private static final String CUSTOMER_VISIT_EVENT = "customer_visit_event";
@@ -31,12 +35,25 @@ class KafkaApplicationTests {
     }
 
 	@Test
-	void contextLoads() throws InterruptedException, ExecutionException, TimeoutException {
+	void StringProducerConsumer() throws InterruptedException, ExecutionException, TimeoutException {
 	    String payload = Uuid.randomUuid().toString();
 	    stringkafkaTemplate.send(CUSTOMER_VISIT_EVENT, payload).get(10, TimeUnit.SECONDS);
 	    String s = q.poll(10, TimeUnit.SECONDS);
 	    assertNotNull(s);
 	    assertEquals(payload, s);
 	}
+
+    @Autowired
+    KafkaTemplate<String, CustomerVisitEvent> customerVisitEventKafkaTemplate;
+
+    @Test
+    void CustomerVisitEventProducerConsumer() throws InterruptedException, ExecutionException, TimeoutException {
+        CustomerVisitEvent customerVisitEvent = CustomerVisitEvent.builder().customerId(UUID.randomUUID().toString()).dateTime(LocalDateTime.now()).build();
+        customerVisitEventKafkaTemplate.send(CUSTOMER_VISIT_EVENT, customerVisitEvent).get(10, TimeUnit.SECONDS);
+
+        String s = q.poll(10, TimeUnit.SECONDS);
+        assertNotNull(s);
+//        assertEquals(payload, s);
+    }
 
 }
